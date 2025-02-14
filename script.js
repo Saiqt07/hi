@@ -49,3 +49,10 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
+document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.querySelector("iframe");
+    
+    document.body.addEventListener("click", function () {
+        iframe.src += "&mute=0"; // Unmute when clicked
+    });
+});
