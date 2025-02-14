@@ -49,10 +49,10 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const iframe = document.querySelector("iframe");
-    
-    document.body.addEventListener("click", function () {
-        iframe.src += "&mute=0"; // Unmute when clicked
-    });
+$(".heart").on("click", function () {
+    let music = document.getElementById("bg-music");
+    if (music.paused) {
+        music.muted = false; // Ensure unmuted
+        music.play().catch(error => console.log("Playback error:", error));
+    }
 });
